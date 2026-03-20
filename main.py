@@ -1,6 +1,7 @@
 from turtle import Screen
 import time
 from paddle import Paddle
+from pong_ball import PongBall
 
 # Initialize Screen Object
 screen = Screen()
@@ -13,7 +14,8 @@ screen.tracer(0)
 paddle_1 = Paddle(350,0)
 # Initialize Second Paddle
 paddle_2 = Paddle(-350,0)
-
+# Initialize Ball
+pong_ball = PongBall()
 # # Listen for key events to invoke methods to change direction
 screen.listen()
 screen.onkey(paddle_1.up, "Up")
