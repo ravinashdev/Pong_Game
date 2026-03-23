@@ -46,9 +46,8 @@ while game_on:
     if abs(pong_ball.ycor()) >= 280:
         pong_ball.y_inverse()
     # Paddle Collision using abs value of paddle position and 50 pixels from paddle
-    elif abs(pong_ball.xcor()) >= 320 and (pong_ball.distance(paddle_1) < 50 or pong_ball.distance(paddle_2) < 50):
+    elif abs(pong_ball.xcor()) >= 330 and (pong_ball.distance(paddle_1) < 50 or pong_ball.distance(paddle_2) < 50):
         pong_ball.x_inverse()
-        # pong_ball.ball_speed_increase()
     # PongBall passes any of the paddles one player scores and the ball resets
     elif abs(pong_ball.xcor()) >= 350:
         # Logic to increase scoreboard respectively as it passes the paddle of one player
@@ -60,15 +59,17 @@ while game_on:
             paddle_1_score.write_score()
         pong_ball.reset_position()
     # Game over condition for when the first paddle 1 reach's 11
-    elif (paddle_1_score.score or paddle_2_score.score) == 11:
+    elif paddle_1_score.score == 11 or paddle_2_score.score == 11:
         game_over = ScoreBoard(x_coordinate= 0,y_coordinate= 0)
+        winner_message = ScoreBoard(x_coordinate= 0,y_coordinate= -50)
         net.clear()
         # Logic to display the winning player on screen with GAME OVER!
         if paddle_1_score.score == 11:
-            winner = "Player 1 Wins!"
+            winner = "Player 1 (Right Paddle) Wins!"
         elif paddle_2_score.score == 11:
-            winner = "Player 2 Wins!"
-        game_over.game_over(winner)
+            winner = "Player 2 (Left Paddle) Wins!"
+        game_over.game_over("GAME OVER")
+        winner_message.game_over(winner)
         game_on = False
 # Screen exit on click
 screen.exitonclick()
