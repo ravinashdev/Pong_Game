@@ -28,7 +28,6 @@ paddle_1_score = ScoreBoard(x_coordinate= 175,y_coordinate= 200)
 paddle_2_score = ScoreBoard(x_coordinate= -175, y_coordinate=200)
 paddle_1_score.write_score()
 paddle_2_score.write_score()
-
 # # Listen for key events to invoke methods to change direction
 screen.listen()
 screen.onkey(paddle_1.up, "Up")
@@ -70,7 +69,7 @@ while game_on:
             winner_message = "Player 1 (Right Paddle) Wins!"
         elif paddle_2_score.score == 11:
             winner_message = "Player 2 (Left Paddle) Wins!"
-        game_over_board.game_over()
+        game_over_board.game_over(game_over_message)
         winner_board.game_over(winner_message)
         game_on = False
 # Screen exit on click
