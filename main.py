@@ -60,16 +60,18 @@ while game_on:
         pong_ball.reset_position()
     # Game over condition for when the first paddle 1 reach's 11
     elif paddle_1_score.score == 11 or paddle_2_score.score == 11:
-        game_over = ScoreBoard(x_coordinate= 0,y_coordinate= 0)
-        winner_message = ScoreBoard(x_coordinate= 0,y_coordinate= -50)
+        game_over_board = ScoreBoard(x_coordinate= 0,y_coordinate= 0)
+        winner_board = ScoreBoard(x_coordinate= 0,y_coordinate= -50)
+        game_over_message = "GAME OVER"
+        winner_message = "None"
         net.clear()
         # Logic to display the winning player on screen with GAME OVER!
         if paddle_1_score.score == 11:
-            winner = "Player 1 (Right Paddle) Wins!"
+            winner_message = "Player 1 (Right Paddle) Wins!"
         elif paddle_2_score.score == 11:
-            winner = "Player 2 (Left Paddle) Wins!"
-        game_over.game_over("GAME OVER")
-        winner_message.game_over(winner)
+            winner_message = "Player 2 (Left Paddle) Wins!"
+        game_over_board.game_over()
+        winner_board.game_over(winner_message)
         game_on = False
 # Screen exit on click
 screen.exitonclick()
