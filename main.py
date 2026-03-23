@@ -40,7 +40,7 @@ game_on = True
 while game_on:
     pong_ball.move()
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.11)
     # Wall Collision
     if abs(pong_ball.ycor()) >= 280:
         pong_ball.y_inverse()

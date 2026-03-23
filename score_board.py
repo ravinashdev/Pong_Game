@@ -1,7 +1,7 @@
 from turtle import Turtle
 MOVE = False
 ALIGN = "center"
-FONT = ("Courier", 30, "bold")
+FONT = ("Courier", 60, "bold")
 class ScoreBoard(Turtle):
     def __init__(self, x_coordinate, y_coordinate):
         super().__init__()

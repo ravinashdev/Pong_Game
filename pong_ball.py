@@ -1,10 +1,10 @@
 from turtle import Turtle
-BALL_POSITIONS = [(0,0),(20,20),(40,40),(60,60),(80,80),(100,100),(120,120)]
 
 class PongBall(Turtle):
     def __init__(self):
         super().__init__()
         self.shape("circle")
+        self.shapesize(stretch_wid=2, stretch_len=2)
         self.color("blue")
         self.penup()
         self.setposition(0, 0)
